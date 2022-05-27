@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="choiceBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.university_registration_system_gui.SceneController">
+   <children>
+      <Button fx:id="setChoiceBtn" layoutX="324.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToSetData" prefWidth="250.0" text="Set your data">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="getChoiceBtn" layoutX="325.0" layoutY="482.0" mnemonicParsing="false" onAction="#switchToGetData" prefWidth="250.0" text="Get your data">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="228.0" layoutY="224.0" text="Alexandria University">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="277.0" text="Faculty of Data Science and Computing">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="391.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@uni-logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="switchToPayments" layoutX="324.0" layoutY="528.0" mnemonicParsing="false" onAction="#switchToPayments" prefWidth="250.0" text="Make a payment">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.university_registration_system_gui.SetDataScene">
+   <children>
+      <Label layoutX="398.0" layoutY="22.0" text="Set your data">
+         <font>
+            <Font name="Cairo-Regular" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="submitBtn" disable="true" layoutX="770.0" layoutY="632.0" mnemonicParsing="false" onAction="#submit" prefWidth="100.0" text="Submit" />
+      <Button fx:id="backBtn" layoutX="687.0" layoutY="632.0" mnemonicParsing="false" onAction="#backToHomeScreen" prefWidth="70.0" text="Back" />
+      <Accordion layoutX="14.0" layoutY="70.0" />
+      <TabPane focusTraversable="false" layoutX="14.0" layoutY="70.0" prefHeight="550.0" prefWidth="870.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="personalInfo" text="Personal Information">
+            <content>
+              <AnchorPane minHeight="500.0" minWidth="875.0" onKeyTyped="#updateProgress" prefHeight="500.0" prefWidth="860.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="36.0" text="First name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="firstName" layoutX="106.0" layoutY="33.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="14.0" layoutY="72.0" text="Middle name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="middleName" layoutX="106.0" layoutY="69.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="14.0" layoutY="108.0" text="Last name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="lastName" layoutX="106.0" layoutY="105.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="14.0" layoutY="142.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="158.0" text="Nationality">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nationality" layoutX="106.0" layoutY="155.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="12.0" layoutY="210.0" text="Birthday">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="106.0" layoutY="210.0" text="Day">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="dayOfBirth" editable="true" layoutX="138.0" layoutY="208.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                            <valueFactory>
+                                <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="31" min="1" />
+                            </valueFactory>
+                        </Spinner>
+                        <Label layoutX="234.0" layoutY="211.0" text="Month">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="monthOfBirth" editable="true" layoutX="283.0" layoutY="208.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="12" min="1" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label layoutX="375.0" layoutY="210.0" text="Year">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="yearOfBirth" editable="true" layoutX="411.0" layoutY="207.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="2000" max="2022" min="1960" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label layoutX="15.0" layoutY="261.0" text="Gender">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="gender" layoutX="106.0" layoutY="258.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="15.0" layoutY="305.0" text="ID Number">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idNumber" layoutX="106.0" layoutY="302.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="158.0" />
+                        <Label layoutX="284.0" layoutY="305.0" text="Type of ID">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idType" layoutX="375.0" layoutY="302.0" onKeyPressed="#updateProgress" prefHeight="26.0" prefWidth="161.0" promptText="e.g., national ID, passport, …" />
+                        <Label layoutX="558.0" layoutY="305.0" text="Validity of ID">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="IDValidity" editable="true" layoutX="657.0" layoutY="302.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="12" min="0" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label fx:id="idNumberWarning" layoutX="106.0" layoutY="335.0" text="Your ID number should be numeric" textFill="RED" visible="false" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Address">
+            <content>
+                  <Pane prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                    <AnchorPane layoutX="7.0" layoutY="7.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="29.0" text="Home Address">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="75.0" text="Flat Number">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="105.0" text="House Number">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="153.0" text="Street Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="streetName" layoutX="137.0" layoutY="150.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="183.0" text="Area Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="areaName" layoutX="137.0" layoutY="180.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="212.0" text="City Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cityName" layoutX="137.0" layoutY="209.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="241.0" text="Governorate Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="governorateName" layoutX="137.0" layoutY="238.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="271.0" text="Country">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="country" layoutX="137.0" layoutY="268.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="16.0" layoutY="302.0" text="Postal Code">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="postalCode" layoutX="137.0" layoutY="299.0" onKeyPressed="#updateProgress" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="435.0" layoutY="7.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="29.0" text="Mailing Address">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="75.0" text="Flat Number">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="105.0" text="House Number">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="153.0" text="Street Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="streetNameMail" layoutX="137.0" layoutY="150.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="183.0" text="Area Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="areaNameMail" layoutX="137.0" layoutY="180.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="212.0" text="City Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cityNameMail" layoutX="137.0" layoutY="209.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="241.0" text="Governorate Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="governorateNameMail" layoutX="137.0" layoutY="238.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="14.0" layoutY="271.0" text="Country">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="countryMail" layoutX="137.0" layoutY="268.0" onKeyPressed="#updateProgress" />
+                              <Label layoutX="16.0" layoutY="302.0" text="Postal Code">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="postalCodeMail" layoutX="137.0" layoutY="299.0" onKeyPressed="#updateProgress" />
+                           </children>
+                        </AnchorPane>
+                        <CheckBox fx:id="homeMailChoice" layoutX="628.0" layoutY="47.0" mnemonicParsing="false" onAction="#ToggleMailInputs" text="The same as your home Address ?" />
+                        <TextField fx:id="flatNum" layoutX="145.0" layoutY="78.0" onKeyPressed="#updateProgress" />
+                        <TextField fx:id="houseNum" layoutX="145.0" layoutY="113.0" onKeyPressed="#updateProgress" />
+                        <TextField fx:id="flatNumMail" layoutX="571.0" layoutY="78.0" onKeyPressed="#updateProgress" />
+                        <TextField fx:id="houseNumMail" layoutX="571.0" layoutY="113.0" onKeyPressed="#updateProgress" />
+                     </children>
+                  </Pane>
+            </content>
+          </Tab>
+            <Tab text="College Information">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="58.0" text="First enrolment year">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="firstEnrolmentYear" editable="true" layoutX="152.0" layoutY="55.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="2022" max="2022" min="1980" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label layoutX="14.0" layoutY="103.0" text="Department">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="149.0" text="Your tutor's name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tutorName" layoutX="153.0" layoutY="147.0" onKeyPressed="#updateProgress" />
+                        <Label layoutX="425.0" layoutY="150.0" text="Your tutor's code">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tutorCode" layoutX="555.0" layoutY="147.0" onKeyPressed="#updateProgress" />
+                        <Label layoutX="14.0" layoutY="244.0" text="GPA">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="gpa" layoutX="153.0" layoutY="242.0" onKeyTyped="#checkForFloat" text="0.00" />
+                        <CheckBox fx:id="newStudent" layoutX="14.0" layoutY="203.0" mnemonicParsing="false" onAction="#toggleGPAInput" text="New Student" />
+                        <ChoiceBox fx:id="departmentMenu" layoutX="152.0" layoutY="101.0" onKeyTyped="#updateProgress" prefWidth="150.0" />
+                        <Label layoutX="9.0" layoutY="292.0" text="Finished Credit Hours">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="finishedCreditHours" editable="true" layoutX="153.0" layoutY="290.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="120" min="0" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label fx:id="GPAWarning" layoutX="313.0" layoutY="246.0" textFill="#f70000" visible="false" />
+                        <Label layoutX="425.0" layoutY="58.0" text="Current term">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="currentTerm" editable="true" layoutX="555.0" layoutY="55.0" onKeyTyped="#updateProgress" prefHeight="26.0" prefWidth="66.0">
+                           <valueFactory>
+                              <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="8" min="1" />
+                           </valueFactory>
+                        </Spinner>
+                        <Label layoutX="355.0" layoutY="293.0" text="Student registration number">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="RegNum" layoutX="555.0" layoutY="290.0" onKeyPressed="#updateProgress" />
+                        <Label fx:id="successLabel" layoutX="547.0" layoutY="494.0" text="Your data has been added Successfully" visible="false">
+                           <textFill>
+                              <RadialGradient centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.14884990453720093" green="0.8736842274665833" blue="0.09707602113485336" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.22009097039699554" green="0.6105263233184814" blue="0.19220273196697235" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="regNumWarning" layoutX="555.0" layoutY="273.0" text="Your registration number should be numeric" textFill="RED" visible="false" />
+                        <Label fx:id="successLabel" layoutX="405.0" layoutY="475.0" text="Your data has been submitted successfully !!" textFill="#0bff50" visible="false">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Payments">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="62.0" text="Type of funding">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fundingType" layoutX="133.0" layoutY="60.0" onKeyPressed="#updateProgress" prefHeight="25.0" prefWidth="191.0" promptText="e.g., self-funded or grant-funded" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Courses">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                        <TextArea fx:id="finishedCourseTextView" disable="true" layoutX="14.0" layoutY="177.0" prefHeight="226.0" prefWidth="353.0" />
+                        <Label layoutX="483.0" layoutY="58.0" text="Current courses">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="finishedCourseTextFiled" layoutX="14.0" layoutY="84.0" prefHeight="25.0" prefWidth="310.0" />
+                        <Button fx:id="addFinishedCourse" layoutX="329.0" layoutY="84.0" mnemonicParsing="false" onAction="#addFinishedCourse" onKeyTyped="#updateProgress" text="Add" />
+                        <Label layoutX="11.0" layoutY="117.0" text="*Press add after every course you enter" />
+                        <Label layoutX="14.0" layoutY="58.0" text="Finished courses">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="currentCourseTextFiled" layoutX="483.0" layoutY="84.0" prefHeight="25.0" prefWidth="310.0" />
+                        <Button fx:id="addCurrentCourse" layoutX="798.0" layoutY="84.0" mnemonicParsing="false" onAction="#addCurrentCourse" onKeyTyped="#updateProgress" text="Add" />
+                        <TextArea fx:id="currentCourseTextView" disable="true" layoutX="483.0" layoutY="177.0" prefHeight="226.0" prefWidth="353.0" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Contact">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="62.0" text="Email">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="studentEmail" layoutX="133.0" layoutY="60.0" onKeyTyped="#isEmailValid" prefHeight="25.0" prefWidth="191.0" />
+                        <Label layoutX="16.0" layoutY="118.0" text="Phone number">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="studentPhoneNum" layoutX="133.0" layoutY="115.0" onKeyPressed="#updateProgress" prefHeight="25.0" prefWidth="191.0" />
+                        <Label layoutX="14.0" layoutY="168.0" text="Mobile number">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="studentMobileNumber" layoutX="133.0" layoutY="166.0" onKeyTyped="#checkMobileNumber" prefHeight="25.0" prefWidth="191.0" />
+                        <Label fx:id="emailWarning" layoutX="332.0" layoutY="64.0" text="Please enter a valid email" textFill="RED" visible="false" />
+                        <Label fx:id="phoneNumberWarning" layoutX="332.0" layoutY="120.0" text="Enter a valid phone number" textFill="RED" visible="false" />
+                        <Label fx:id="mobileNumberWarning" layoutX="332.0" layoutY="170.0" text="Enter a valid mobile number" textFill="RED" visible="false" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ProgressIndicator fx:id="setDataProgress" layoutX="49.0" layoutY="625.0" progress="0.0" />
+      <Label fx:id="submitLabel" layoutX="98.0" layoutY="620.0" text="Your data has been submitted Successfully" textFill="#0dff00" visible="false">
+         <font>
+            <Font name="Cairo Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

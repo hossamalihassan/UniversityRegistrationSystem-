@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.university_registration_system_gui.GetDataScene">
+   <children>
+      <Button layoutX="825.0" layoutY="642.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="399.0" layoutY="14.0" text="Get your data">
+         <font>
+            <Font name="Cairo-Regular" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
